@@ -11,7 +11,7 @@ galaxy_info:
         - trusty
         - xenial
     - name: Debian
-      version:
+      versions:
         - jessie
 
   galaxy_tags:
