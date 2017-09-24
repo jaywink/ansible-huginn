@@ -71,7 +71,7 @@ Example Playbook
       become_user: root
 
       vars:
-        letsencrypt_email: mail@jasonrobinson.me
+        letsencrypt_email: youremail@example.com
         huginn_domain: huginn.example.com
         huginn_invitation_code: changeme!
         huginn_secret: changeme!
