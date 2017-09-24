@@ -1,0 +1,23 @@
+---
+- docker_container:
+    name: huginn
+    image: huginn/huginn
+    volumes:
+      - "{{ huginn_db_volume_mount }}:/var/lib/mysql"
+    env:
+      APP_SECRET_TOKEN: "{{ huginn_secret }}"
+      DOMAIN: "{{ huginn_domain }}"
+      FORCE_SSL: "{{ huginn_https}}"
+      INVITATION_CODE: "{{ huginn_invitation_code }}"
+      MAIL_FROM_ADDRESS: "{{ huginn_mail_from }}"
+      RAILS_ENV: production
+      SMTP_DOMAIN: "{{ huginn_smtp_domain }}"
+      SMTP_PASSWORD: "{{ huginn_smtp_password }}"
+      SMTP_PORT: "{{ huginn_smtp_port }}"
+      SMTP_SERVER: "{{ huginn_smtp_server }}"
+      SMTP_USER_NAME: "{{ huginn_smtp_username }}"
+      TWITTER_OAUTH_KEY: "{{ huginn_twitter_key }}"
+      TWITTER_OAUTH_SECRET: "{{ huginn_twitter_secret }}"
+  register: _docker_huginn
+
+#- debug: var=_docker_huginn

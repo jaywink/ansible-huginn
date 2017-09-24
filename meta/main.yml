@@ -1,0 +1,22 @@
+galaxy_info:
+  author: Jason Robinson
+  description: Huginn using Docker
+  license: MIT
+
+  min_ansible_version: 2.1
+
+  galaxy_tags:
+    - huginn
+    - docker
+    - automation
+    - iftt
+    - zapier
+
+dependencies:
+  - { role: geerlingguy.pip, pip_install_packages: ["docker"] }
+  - geerlingguy.docker
+  - role: jaywink.letsencrypt
+    letsencrypt_pause_services: ["apache2"]
+    letsencrypt_domain: "{{ huginn_domain }}"
+    letsencrypt_request_www: false
+    letsencrypt_force_renew: false

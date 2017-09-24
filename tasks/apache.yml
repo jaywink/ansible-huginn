@@ -1,0 +1,20 @@
+---
+- name: Install Apache
+  apt: name={{ item }} state=present
+  with_items:
+    - apache2
+- name: Apache modules
+  apache2_module: state=present name={{ item }}
+  with_items:
+    - proxy
+    - ssl
+  notify:
+    - restart apache
+- name: Apache site
+  template: dest=/etc/apache2/sites-available/{{ huginn_domain }}.conf src=apache.conf
+  notify:
+    - restart apache
+- name: Enable site
+  command: a2ensite {{ huginn_domain }}
+  notify:
+    - restart apache

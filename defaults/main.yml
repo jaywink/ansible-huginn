@@ -1,0 +1,15 @@
+---
+#huginn_invitation_code: changeme!
+#huginn_secret: changeme!
+huginn_db_volume_mount: /opt/backups/huginn/mysql
+huginn_domain: huginn.local
+huginn_https: true
+huginn_mail_from: huginn@domain.tld
+huginn_smtp_domain: your-domain-here.com
+huginn_smtp_password: somepassword
+huginn_smtp_port: 587
+huginn_smtp_server: smtp.domain.tld
+huginn_smtp_username: you@domain.tld
+huginn_timezone: Helsinki
+huginn_twitter_key:
+huginn_twitter_secret:
