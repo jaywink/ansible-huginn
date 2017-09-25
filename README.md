@@ -1,4 +1,4 @@
-Ansible ole - Huginn with Docker
+Ansible role - Huginn with Docker
 ================================
 
 Run [Huginn](https://github.com/huginn/huginn) using Docker.
