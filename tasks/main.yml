@@ -1,3 +1,4 @@
 ---
 - include: container.yml
 - include: apache.yml
+  when: huginn_apache

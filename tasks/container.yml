@@ -2,8 +2,6 @@
 - docker_container:
     name: huginn
     image: huginn/huginn
-    volumes:
-      - "{{ huginn_db_volume_mount }}:/var/lib/mysql"
     env:
       APP_SECRET_TOKEN: "{{ huginn_secret }}"
       DOMAIN: "{{ huginn_domain }}"
@@ -18,6 +16,10 @@
       SMTP_USER_NAME: "{{ huginn_smtp_username }}"
       TWITTER_OAUTH_KEY: "{{ huginn_twitter_key }}"
       TWITTER_OAUTH_SECRET: "{{ huginn_twitter_secret }}"
-  register: _docker_huginn
-
-#- debug: var=_docker_huginn
+    labels:
+      traefik.frontend.rule: "Host:{{ huginn_domain }}"
+      traefik.port: "3000"
+      traefik.enable: "true"
+    log_driver: json-file
+    log_options:
+      max-size: 100m

@@ -26,10 +26,13 @@ You must set the following.
 
 Optional for customization.
 
-    # Customize where container database is mounted to
-    huginn_db_volume_mount: /opt/backups/huginn/mysql
+    # Enable to install apache to do reverse proxy, otherwise
+    # some Traefik labels will be exposed on the container or
+    # you can do your own reverse proxying to 3000 port on the
+    # container
+    huginn_apache: false
 
-    # You can disable HTTPS, but really you should not.
+    # You can disable HTTPS if SSL is terminated at the reverse proxy
     huginn_https: true
 
     # Email from
@@ -52,15 +55,23 @@ Optional for customization.
 Dependencies
 ------------
 
-Depends on the following roles:
+Docker is required on the target host.
 
-* geerlingguy.pip
-* geerlingguy.docker
-* jaywink.letsencrypt
+Depends on the following role if you use Apache2 (`huginn_apache: true`):
+
+* `jaywink.letsencrypt`
 
 You MUST set a valid email for the LetsEncrypt cert in your playbook.
 
-    letsencrypt_email: youremail@example.com
+Example to include in playbook `roles`:
+
+    - role: jaywink.letsencrypt
+      vars:
+        letsencrypt_pause_services: ["apache2"]
+        letsencrypt_domain: "{{ huginn_domain }}"
+        letsencrypt_request_www: false
+        letsencrypt_force_renew: false
+        letsencrypt_email: youremail@example.com
 
 Example Playbook
 ----------------
@@ -71,7 +82,6 @@ Example Playbook
       become_user: root
 
       vars:
-        letsencrypt_email: youremail@example.com
         huginn_domain: huginn.example.com
         huginn_invitation_code: changeme!
         huginn_secret: changeme!

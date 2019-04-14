@@ -1,7 +1,6 @@
 ---
 #huginn_invitation_code: changeme!
 #huginn_secret: changeme!
-huginn_db_volume_mount: /opt/backups/huginn/mysql
 huginn_domain: huginn.local
 huginn_https: true
 huginn_mail_from: huginn@domain.tld
@@ -13,3 +12,9 @@ huginn_smtp_username: you@domain.tld
 huginn_timezone: Helsinki
 huginn_twitter_key:
 huginn_twitter_secret:
+
+# Enable to install apache to do reverse proxy, otherwise
+# some Traefik labels will be exposed on the container or
+# you can do your own reverse proxying to 3000 port on the
+# container
+huginn_apache: false
