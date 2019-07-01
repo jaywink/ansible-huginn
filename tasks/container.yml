@@ -23,3 +23,4 @@
     log_driver: json-file
     log_options:
       max-size: 100m
+    restart_policy: unless-stopped
