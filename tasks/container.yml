@@ -5,7 +5,7 @@
     env:
       APP_SECRET_TOKEN: "{{ huginn_secret }}"
       DOMAIN: "{{ huginn_domain }}"
-      FORCE_SSL: "{{ huginn_https}}"
+      FORCE_SSL: "{{ huginn_https }}"
       INVITATION_CODE: "{{ huginn_invitation_code }}"
       EMAIL_FROM_ADDRESS: "{{ huginn_mail_from }}"
       RAILS_ENV: production
