@@ -7,7 +7,7 @@
       DOMAIN: "{{ huginn_domain }}"
       FORCE_SSL: "{{ huginn_https}}"
       INVITATION_CODE: "{{ huginn_invitation_code }}"
-      MAIL_FROM_ADDRESS: "{{ huginn_mail_from }}"
+      EMAIL_FROM_ADDRESS: "{{ huginn_mail_from }}"
       RAILS_ENV: production
       SMTP_DOMAIN: "{{ huginn_smtp_domain }}"
       SMTP_PASSWORD: "{{ huginn_smtp_password }}"
