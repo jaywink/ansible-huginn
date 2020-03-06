@@ -29,6 +29,9 @@ Optional for customization (defaults given below):
     # you can do your own reverse proxying to 3000 port on the
     # container
     huginn_apache: false
+    
+    # Set to true to enable using for example the Shell Agent
+    huginn_enable_insecure_agents: 'false'
 
     # You can disable HTTPS if SSL is terminated at the reverse proxy
     huginn_https: true
