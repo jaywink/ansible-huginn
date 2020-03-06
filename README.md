@@ -3,8 +3,6 @@ Ansible role - Huginn with Docker
 
 Run [Huginn](https://github.com/huginn/huginn) using Docker.
 
-Role will also install Apache2 with a LetsEncrypt SSL certificate to proxy traffic to the Huginn container.
-
 Requirements
 ------------
 
@@ -24,7 +22,7 @@ You must set the following.
     # Your domain where Huginn lives
     huginn_domain: huginn.local
 
-Optional for customization.
+Optional for customization (defaults given below):
 
     # Enable to install apache to do reverse proxy, otherwise
     # some Traefik labels will be exposed on the container or
@@ -34,6 +32,9 @@ Optional for customization.
 
     # You can disable HTTPS if SSL is terminated at the reverse proxy
     huginn_https: true
+    
+    # Use a custom docker image
+    huginn_image: huginn/huginn
 
     # Email from
     huginn_mail_from: huginn@domain.tld
@@ -88,6 +89,13 @@ Example Playbook
 
       roles:
         - huginn
+        
+Dockerfile
+----------
+
+There is also a custom dockerfile that adds some utilities to the Huginn
+image, currently `wget` and `curl`. You can find built images from
+https://git.feneas.org/jaywink/ansible-huginn/container_registry
 
 License
 -------
@@ -97,4 +105,4 @@ MIT
 Author Information
 ------------------
 
-Jason Robinson / https://jasonrobinson.me
+Jason Robinson / https://jasonrobinson.me / `@jaywink:federator.dev`

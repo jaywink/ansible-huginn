@@ -3,6 +3,7 @@
 #huginn_secret: changeme!
 huginn_domain: huginn.local
 huginn_https: "true"
+huginn_image: huginn/huginn
 huginn_mail_from: huginn@domain.tld
 huginn_smtp_domain: your-domain-here.com
 huginn_smtp_password: somepassword

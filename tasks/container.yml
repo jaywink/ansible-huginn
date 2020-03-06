@@ -1,7 +1,7 @@
 ---
 - docker_container:
     name: huginn
-    image: huginn/huginn
+    image: "{{ huginn_image }}"
     env:
       APP_SECRET_TOKEN: "{{ huginn_secret }}"
       DOMAIN: "{{ huginn_domain }}"
