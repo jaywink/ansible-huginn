@@ -104,8 +104,8 @@ Dockerfile
 ----------
 
 There is also a custom dockerfile that adds some utilities to the Huginn
-image, currently `wget` and `curl`. You can find built images from
-https://git.feneas.org/jaywink/ansible-huginn/container_registry
+image, currently `wget` and `curl`. You can find the images at
+https://hub.docker.com/r/jaywink/huginn
 
 License
 -------
