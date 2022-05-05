@@ -8,6 +8,10 @@ Requirements
 
 Ansible 2.1+.
 
+Install collections:
+
+`ansible-galaxy collection install community.docker`
+
 Role Variables
 --------------
 
@@ -41,6 +45,9 @@ Optional for customization (defaults given below):
 
     # Email from
     huginn_mail_from: huginn@domain.tld
+
+    # Mysql data location
+    huginn_mysql_path: /opt/huginn/mysql
 
     # SMTP settings
     huginn_smtp_domain: your-domain-here.com

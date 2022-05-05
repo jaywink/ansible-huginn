@@ -6,6 +6,7 @@ huginn_enable_insecure_agents: "false"
 huginn_https: "true"
 huginn_image: huginn/huginn
 huginn_mail_from: huginn@domain.tld
+huginn_mysql_path: /opt/huginn/mysql
 huginn_smtp_domain: your-domain-here.com
 huginn_smtp_password: somepassword
 huginn_smtp_port: "587"

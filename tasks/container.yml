@@ -1,5 +1,13 @@
 ---
-- docker_container:
+- name: "Ensure mysql path"
+  ansible.builtin.file:
+    path: "{{ huginn_mysql_path }}"
+    state: directory
+    owner: 1001
+    group: 1001
+
+- name: "Maintain huginn container"
+  community.docker.docker_container:
     name: huginn
     image: "{{ huginn_image }}"
     env:
@@ -17,6 +25,8 @@
       TWITTER_OAUTH_KEY: "{{ huginn_twitter_key }}"
       TWITTER_OAUTH_SECRET: "{{ huginn_twitter_secret }}"
       ENABLE_INSECURE_AGENTS: "{{ huginn_enable_insecure_agents }}"
+    volumes:
+      - "{{ huginn_mysql_path }}:/var/lib/mysql"
     labels:
       traefik.frontend.rule: "Host:{{ huginn_domain }}"
       traefik.port: "3000"
