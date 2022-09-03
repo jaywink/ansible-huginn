@@ -1,4 +1,4 @@
-FROM huginn/huginn:6bf00318b0a38651133ff95728105f4d844aa49c
+FROM huginn/huginn:4df1217d3055db980a04f293e28016b77826e3ca
 
 USER root
 
