@@ -19,7 +19,7 @@
       RAILS_ENV: production
       SMTP_DOMAIN: "{{ huginn_smtp_domain }}"
       SMTP_PASSWORD: "{{ huginn_smtp_password }}"
-      SMTP_PORT: "{{ huginn_smtp_port }}"
+      SMTP_PORT: "{{ huginn_smtp_port | string }}"
       SMTP_SERVER: "{{ huginn_smtp_server }}"
       SMTP_USER_NAME: "{{ huginn_smtp_username }}"
       TWITTER_OAUTH_KEY: "{{ huginn_twitter_key }}"
