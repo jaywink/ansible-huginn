@@ -27,6 +27,8 @@
       ENABLE_INSECURE_AGENTS: "{{ huginn_enable_insecure_agents }}"
     volumes:
       - "{{ huginn_mysql_path }}:/var/lib/mysql"
+    ports:
+      - "3000"
     labels:
       traefik.frontend.rule: "Host:{{ huginn_domain }}"
       traefik.port: "3000"
@@ -35,3 +37,4 @@
     log_options:
       max-size: 100m
     restart_policy: unless-stopped
+    networks: "{{ huginn_docker_networks }}"

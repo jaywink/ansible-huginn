@@ -21,3 +21,7 @@ huginn_twitter_secret:
 # you can do your own reverse proxying to 3000 port on the
 # container
 huginn_apache: false
+
+# Docker networks to attach to
+huginn_docker_networks:
+  - name: bridge
